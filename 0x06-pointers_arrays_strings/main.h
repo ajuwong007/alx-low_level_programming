@@ -10,5 +10,6 @@ char *string_toupper(char *a);
 char *cap_string(char *a);
 char *leet(char *a);
 int _putchar(char c);
+void print_number(int n);
 
 #endif
