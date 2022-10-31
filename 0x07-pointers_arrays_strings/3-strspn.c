@@ -2,11 +2,11 @@
 
 /**
  * _strspn - gets the length of a prefix substring
+ * @s: The string to be searched.
+ * @accept: The prefix to be measured.
  *
- * @s: pointer that contains the string to be evaluated
- * @accept: pointer that contains the substring that will condition s
- *
- * Return: length of s which contains characters in accept
+ * Return: The number of bytes in s which
+ *         consist only of bytes from accept.
  */
 unsigned int _strspn(char *s, char *accept)
 {
