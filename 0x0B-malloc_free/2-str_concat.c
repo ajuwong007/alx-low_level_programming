@@ -3,48 +3,50 @@
 #include <stdio.h>
 
 /**
- * str_concat - Concatenates two strings of any size
- * @s1: the first string to concatenate
- * @s2: the second string to concatenate
- *
- * Return: the two strings concatenated
+ * str_concat - function that concatenates two strings.
+ * @s1: input
+ * @s2: input
+ * Return: output
  */
 char *str_concat(char *s1, char *s2)
 {
-	int i = 0, j = 0, k = 0, l = 0;
-	char *s;
+	int i = 0;
+	int j = 0;
+	int k;
+	char *ar;
+	int l;
 
 	if (s1 == NULL)
-		s1 = "";
-
-	while (s1[i])
-		i++;
-
-	while (s2[j])
-		j++;
-
-	l = i + j;
-	s = malloc((sizeof(char) * l) + 1);
-
-	if (s == NULL)
-		return (NULL);
-
-	j = 0;
-
-	while (k < l)
 	{
-		if (k <= i)
-			s[k] = s1[k];
-
-		if (k >= i)
-		{
-			s[k] = s2[j];
-			j++;
-		}
-
-		k++;
+		s1 = "";
+	}
+	if (s2 == NULL)
+	{
+		s2 = "";
 	}
 
-	s[k] = '\0';
-	return (s);
+	while (s1[i] != '\0')
+	{
+		i++;
+	}
+	while (s2[j] != '\0')
+	{
+		j++;
+	}
+	k = i + j;
+	ar = malloc(sizeof(char) * k + 1);
+	if (ar == 0 || ar == NULL)
+	{
+		return (NULL);
+	}
+	for (l = 0; l <= k && s1[l] != '\0'; l++)
+	{
+		ar[l] = s1[l];
+	}
+	for (l = 0; l <= k && s2[l] != '\0'; l++)
+	{
+		ar[l + i] = s2[l];
+	}
+	ar[k] = '\0';
+	return (ar);
 }
